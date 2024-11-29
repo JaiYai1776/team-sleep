@@ -1,8 +1,11 @@
 # sleepoutside
+# Many hours trying Netlify.  Project worked on several home environments but could not get to work with Netlify.
+
+You can visit the project here  https://team-sleep.vercel.app/
 
 ## Description
 
-Use this as a starting point to complete the WDD 330 team activity: the SleepOutside web application. It scaffolds out a simple web app with Vite support to bundle up our assets.
+The project is live.  More updates to come.  
 
 ## Prerequisites
 
