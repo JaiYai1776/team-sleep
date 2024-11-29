@@ -7,10 +7,13 @@
     "node": true
   },
   "parserOptions": {
-    "ecmaVersion": 2020,
-    "sourceType": "module"
+    "sourceType": "module",
+    "ecmaVersion": 2021,
+    "requireConfigFile": false
   },
+  "parser": "@babel/eslint-parser",
   "rules": {
+    "import/namespace": "off",
     "no-unused-vars": [
       1,
       {
@@ -25,7 +28,7 @@
       }
     ],
     "no-console": 1,
-    "quotes": ["error", "single", { "allowTemplateLiterals": true }],
+    "quotes": ["error", "double", { "allowTemplateLiterals": true }],
     "func-names": 0,
     "space-unary-ops": 2,
     "space-in-parens": "error",
