@@ -8,7 +8,7 @@ function addProductToCart(product) {
   let currentCart = getLocalStorage("so-cart");
 
   // Check if the data in localStorage is an array, reset if necessary
-  if (!Array.isArray(currentCart)) {   
+  if (!Array.isArray(currentCart)) {
     currentCart = []; // Reset to empty array
   }
 
