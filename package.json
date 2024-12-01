@@ -34,5 +34,10 @@
     "last 3 opera versions",
     "last 3 ios_saf versions",
     "last 3 safari versions"
-  ]
+  ],
+  "dependencies": {
+    "@remix-run/dev": "^2.15.0",
+    "@remix-run/node": "^2.15.0",
+    "@remix-run/react": "^2.15.0"
+  }
 }
