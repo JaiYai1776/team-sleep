@@ -1,4 +1,4 @@
-import { getLocalStorage, setLocalStorage } from "./utils.mjs";
+import { getLocalStorage, setLocalStorage, updateCartCount } from "./utils.mjs";
 import ProductData from "./ProductData.mjs";
 
 const dataSource = new ProductData("tents");
@@ -44,13 +44,37 @@ async function renderProductDetail() {
   }
 }
 
-// Function to add a product to the cart
+// Function to add a product to the cart// Function to add a product to the cart
 function addToCart(product) {
   let cart = getLocalStorage("so-cart") || [];
-  cart.push(product);
+
+  // Check if the product already exists in the cart
+  const existingItem = cart.find((item) => item.Id === product.Id);
+  if (existingItem) {
+    existingItem.Quantity = (existingItem.Quantity || 1) + 1; // Increment quantity
+  } else {
+    cart.push({ ...product, Quantity: 1 }); // Add new item with Quantity = 1
+  }
+
+  // Save the updated cart to localStorage
   setLocalStorage("so-cart", cart);
-  alert("Product added to cart!");
+
+  // Update the cart count and display the confirmation message
+  updateCartCount();
+  displayAddToCartMessage();
 }
 
 // Render product details on page load
 renderProductDetail();
+
+function displayAddToCartMessage() {
+  const message = document.createElement("div");
+  message.className = "add-to-cart-message";
+  message.textContent = "Item added to cart!";
+
+  document.body.appendChild(message);
+
+  setTimeout(() => {
+    message.remove();
+  }, 2000);
+}

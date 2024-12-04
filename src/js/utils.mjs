@@ -29,3 +29,25 @@ export function renderListWithTemplate(templateFn, parentElement, list, position
   const htmlStrings = list.map(templateFn).join("");
   parentElement.insertAdjacentHTML(position, htmlStrings);
 }
+
+
+export function updateCartCount() {
+  const cartItems = JSON.parse(localStorage.getItem("so-cart")) || [];
+  const cartCountElement = document.querySelector(".cart-count");
+
+  if (!cartCountElement) {
+    console.error("Cart count element not found!");
+    return;
+  }
+
+  const itemCount = cartItems.reduce((total, item) => total + (item.Quantity || 1), 0);
+
+  if (itemCount > 0) {
+    cartCountElement.textContent = itemCount;
+    cartCountElement.classList.remove("hide");
+  } else {
+    cartCountElement.classList.add("hide");
+  }
+
+  console.log("Cart count updated:", itemCount);
+}
