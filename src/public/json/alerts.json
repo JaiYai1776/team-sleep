@@ -1,11 +1,11 @@
 [
   {
-    "message": "This is only a test",
+    "message": "This is only a test!",
     "background": "darkblue",
     "color": "white"
   },
   {
-    "message": "Don't miss our sale!",
+    "message": "Don't miss our sale!!!",
     "background": "red",
     "color": "yellow"
   }
