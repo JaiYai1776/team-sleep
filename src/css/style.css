@@ -135,12 +135,15 @@ button {
 }
 /* Styles for product lists */
 .product-card {
-  flex: 1 1 45%;
-  margin: 0.25em;
-  padding: 0.5em;
-  border: 1px solid var(--light-grey);
-  max-width: 250px;
+  position: relative;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
+
 .product-card h2,
 .product-card h3,
 .product-card p {
@@ -244,6 +247,41 @@ button {
   border-radius: 5px;
   font-size: 1rem;
   text-align: center;
+}
+.highlight-discount {
+  border: 2px solid red;
+  box-shadow: 0 4px 8px rgba(255, 0, 0, 0.2);
+}
+
+.discount-tag {
+  color: green;
+  font-size: 1rem;
+  margin-top: 10px;
+  font-weight: bold;
+}
+.discount-indicator {
+  color: green;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 10px;
+  background-color: #f0fdf4; /* Light green background */
+  padding: 10px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.sale-flag {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  transform: rotate(-10deg);
+  transform-origin: top left;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 @media screen and (min-width: 500px) {
